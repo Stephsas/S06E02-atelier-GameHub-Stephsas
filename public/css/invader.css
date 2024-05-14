@@ -1,0 +1,160 @@
+:root {
+    --color-primary: #9b68e4;
+    --color-primary-dark: #3148ad;
+    --color-green: #79ea83;
+    --color-green-dark: #62ca69;
+    --color-black: #485460;
+    --color-black-dark: #0d1e31;
+    --color-orange: #fbc048;
+    --color-orange-dark: #ce8e33;
+    --color-gray: #d2dae2;
+    --color-gray-dark: #c1cad3;
+    --color-white: #fff;
+
+    --header-height: 150px;
+    --input-size: 40px;
+    --border-radius: 10px;
+    --cell-size: 30px;
+}  
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+}
+
+body {
+    background-image: linear-gradient(
+        to right,
+        var(--color-primary-dark),
+        var(--color-primary)
+    );
+}
+
+.invader-container {
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#invader {
+    border: 2px solid var(--color-gray-dark);
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: var(--color-gray);
+    border: 2px solid var(--color-gray-dark);
+}
+
+.cell--black {
+    background-color: var(--color-black);
+    border: 2px solid var(--color-black-dark);
+}
+
+.cell--gray {
+    background-color: var(--color-gray);
+    border: 2px solid var(--color-gray-dark);
+}
+
+.cell--green {
+    background-color: var(--color-green);
+    border: 2px solid var(--color-green-dark);
+}
+
+.cell--orange {
+    background-color: var(--color-orange);
+    border: 2px solid var(--color-orange-dark);
+}
+
+.cell--blue {
+    background-color: blue;
+    border: 2px solid blue;
+}
+
+.configuration {
+    background: var(--color-primary-dark);
+    height: var(--header-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+input {
+    height: var(--input-size);
+    border: 0;
+    padding: 0 10px;
+}
+
+.configuration input:first-child {
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+
+.configuration button {
+    height: var(--input-size);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    border: 0;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.configuration button:hover {
+    background-color: var(--color-green);
+}
+
+.color-picker {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    gap: 10px;
+}
+
+.color {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.color--black {
+    background-color: var(--color-black);
+    border: 2px solid var(--color-black-dark);
+}
+
+.color--gray {
+    background-color: var(--color-gray);
+    border: 2px solid var(--color-gray-dark);
+}
+
+.color--orange {
+    background-color: var(--color-orange);
+    border: 2px solid var(--color-orange-dark);
+}
+
+.color--green {
+    background-color: var(--color-green);
+    border: 2px solid var(--color-green-dark);
+}
+
+.color--blue {
+    background-color: blue;
+    border: 2px solid blue;
+}
+
