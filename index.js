@@ -9,6 +9,8 @@ const app = express();
 
 app.use(express.static('public'));
 
+// faire une variable avec tous nos jeux
+
 app.locals.games = games;
 
 // Je vais préciser à express le moteur de rendu que je vais utiliser
