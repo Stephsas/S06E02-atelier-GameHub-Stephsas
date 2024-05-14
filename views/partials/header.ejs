@@ -3,23 +3,31 @@
 
   <head>
     <meta charset="UTF-8">
-    <title><%= title %></title>
+    <title> 
+      <% if (locals.title) { %>
+        <%= title %>
+      <% } else { %>
+        GameHub
+      <% } %>
+    </title>
 
   
     <link rel="stylesheet" href="/css/style.css">
-    <%# if (isDiceRoller) {# %>
-        <link rel="stylesheet" href="/css/diceRoller.css">
-    <%# } %>
-  </head>
 
+    <% if(locals.game) { %>
+      <link rel="stylesheet" href="/css/<%= game.cssFile %>">
+    <% } %>
+
+  </head>
   <body>
     <header>
       <h1>GameHub</h1>
       <nav>
         <ul>
           <li><a href="/">Accueil</a></li>
-          <li><a href="/fourchette">Fourchette</a></li>
-          <li><a href="/diceRoller">diceRoller</a></li>
+          <% for(let game of games) { %>
+            <li><a href="/<%= game.name %>"><%= game.title %></a></li>
+          <% } %>
         </ul>
       </nav>
     </header>
