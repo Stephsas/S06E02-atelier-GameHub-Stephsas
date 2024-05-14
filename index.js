@@ -6,6 +6,10 @@ const game = require('./my_modules/game');
 // Je crée une application express
 const app = express();
 
+// Importing a JSON file:
+//const game = require('./games.json');
+
+
 app.use(express.static('public'));
 
 // Je vais préciser à express le moteur de rendu que je vais utiliser
@@ -26,10 +30,12 @@ console.log(gameName);
 
     });
 
-    res.render(gameName, {
-        game: gameFound
-
-    });
+    if (!gameFound) {
+        // Gérer le cas où aucun jeu correspondant n'est trouvé
+        res.status(404).send('Jeu non trouvé');
+    } else {
+        res.render(gameName, { game: gameFound });
+    }
 
 })
 
