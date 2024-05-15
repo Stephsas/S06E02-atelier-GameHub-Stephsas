@@ -1,10 +1,8 @@
-<%- include('partials/header' , {
-  title: `Jeu : ${game.name}`,
-}) %>
+<%- include('partials/header' , { title: `Jeu : ${game.name}`, }) %>
 
 
 
-  <h3>Dice Roller</h3>
+    <h3>Dice Roller</h3>
 
     <div id="welcome">
         <button id="play" class="btn" type="button">Jouer</button>
@@ -12,13 +10,7 @@
     <div id="app" class="hidden">
         <div class="form">
             <form id="game-form">
-                <input
-                    type="range"
-                    id="dice-number-input"
-                    value="3"
-                    min="1"
-                    max="20"
-                >
+                <input type="range" id="dice-number-input" value="3" min="1" max="20">
                 <span id="dice-number">3</span>
                 <button class="btn">Valider le nombre de dés et lancer</button>
             </form>
@@ -31,5 +23,6 @@
 
     <script src="/js/diceRoller.js"></script>
 
-</body>
-</html>
+    </body>
+
+    </html>

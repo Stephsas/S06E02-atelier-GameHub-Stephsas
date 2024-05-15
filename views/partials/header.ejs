@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-  <head>
-    <meta charset="UTF-8">
-    <title> 
-      <% if (locals.title) { %>
-        <%= title %>
-      <% } else { %>
-        GameHub
-      <% } %>
-    </title>
+<head>
+  <meta charset="UTF-8">
+  <title>
+    <% if (locals.title) { %>
+      <%= title %>
+        <% } else { %>
+          GameHub
+          <% } %>
+  </title>
 
-  
-    <link rel="stylesheet" href="/css/style.css">
 
-    <% if(locals.game) { %>
-      <link rel="stylesheet" href="/css/<%= game.cssFile %>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <% if(locals.game) { %>
+    <link rel="stylesheet" href="/css/<%= game.cssFile %>">
     <% } %>
 
-  </head>
-  <body>
-    <header>
-      <h1>GameHub</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Accueil</a></li>
-          <% for(let game of games) { %>
-            <li><a href="/<%= game.name %>"><%= game.title %></a></li>
+</head>
+
+<body>
+  <header>
+    <h1>GameHub</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <% for(let game of games) { %>
+          <li><a href="/<%= game.name %>">
+              <%= game.title %>
+            </a></li>
           <% } %>
-        </ul>
-      </nav>
-    </header>
+      </ul>
+    </nav>
+  </header>
